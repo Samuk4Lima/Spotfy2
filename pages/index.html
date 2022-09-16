@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <TITLE>Spotify 2</TITLE>
+    <meta charset="latin1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="checkLogged(); checkLoading(); offlineFunctionality();">
+    <div id="leftHeader">
+        <div id="leftHeaderContent">
+            <a href="/" class="row leftTopItem btn">
+                <img id="spotifyLogo" src="../images/spotify_icon_white.svg" style="width: 50px;">
+                <h1>Spotify 2</h1>
+            </a>
+            <div class="row">
+                <!-- Barra de opções comuns, mas só é totalmente desbloqueada para o usuário -->
+                <div id="common_bar" class="col">
+                    <div class="row leftItem">
+                        <button type="button" class="btn btn-transparent"><img id="spotifyLogo"
+                                src="../images/inicio.svg" style="width: 25px;"> Início</button>
+                    </div>
+                    <div class="row leftItem">
+
+                        <button class="btn btn-transparent"><img id="spotifyLogo" src="../images/buscar.svg"
+                                style="width: 25px;"> Buscar</button>
+                    </div>
+                    <div class="row leftItem">
+
+                        <button type="button" class="btn btn-transparent"><img id="spotifyLogo"
+                                src="../images/suabiblioteca.svg" style="width: 25px;"> Sua biblioteca</button>
+                    </div>
+                    <div class="row leftItem">
+
+                        <button type="button" class="btn btn-transparent"><img id="spotifyLogo"
+                                src="../images/criarplaylist.svg" style="width: 25px;"> Criar playlist</button>
+                    </div>
+                    <div class="row leftItem">
+
+                        <button type="button" class="btn btn-transparent"><img id="spotifyLogo"
+                                src="../images/musicascurtidas.png" style="width: 25px;"> Músicas curtidas</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="music_image_container">
+            <!-- <img id="music_image" src="../images/spotify_icon_white.png"> -->
+        </div>
+    </div>
+    <div id="topheaderlogin">
+
+        <div id="search_screen">
+            <input oninput="findSongsWithSearch()" id="search_text" type="text" class="btn btn-grey" maxlength="30"
+                size="30" placeholder="Pesquisar">
+        </div>
+
+        <div class="loginScreen">
+            <!-- Parte que aparece opções de login, cadastro ou sair se logado -->
+            <div id="user_offline">
+                <button onclick="gotoSignup()" class="btn btn-grey">Inscreva-se</button>
+                <button onclick="gotoLogin()" class="btn btn-white">Entrar</button>
+            </div>
+            <div id="user_online" hidden>
+                <label id="username" style="margin-right: 20px;"></label>
+                <button onclick="gotoLogout()" class="btn btn-white">Sair</button>
+            </div>
+        </div>
+    </div>
+    <!-- Tela Principal -->
+    <div id="main_screen_container">
+
+        <!-- Tela principal playlists predefinidas -->
+        <div id="main_screen">
+            <h1>Playlists mais ouvidas</h1>
+            <div id="albums_screen"></div>
+        </div>
+
+        <!-- Playlist / Album -->
+        <div id="current_playlist_container">
+            <h1>Current playlist</h1>
+            <div id="current_playlist"></div>
+        </div>
+
+        <!-- Pesquisar -->
+        <div id="search_screen_container">
+            <h1>Resultados da Busca:</h1>
+            <div id="search_results"></div>
+        </div>
+
+        <!-- Músicas curtidas -->
+        <div id="liked_songs_container">
+            <h1>Músicas curtidas</h1>
+            <div id="liked_songs" class="row"></div>
+        </div>
+
+
+
+        <!-- Criar nova playlist -->
+        <div id="create_playlist">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Player de música -->
+    <div id="playerheader">
+        <div id="player_left">
+            <div class="col">
+                <h4 id="music_name">Música</h4>
+                <p id="music_artist">Artista</p>
+            </div>
+            <div class="col" id="like_container">
+                 <button id="like" onclick="likeSong()"><!--<img src="../images/voltar.svg">--></button> 
+            </div>
+        </div>
+        <div id="player_middle">
+            <div class="col">
+                <div class="row">
+                    <div id="loaded_music_players">
+                        <audio id="music_player" controls>
+                            <source src="" type="">
+                        </audio>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                        <button class="btn btn-transparent btn-rounded" id="voltar"><img
+                                src="../images/voltar.svg"></button>
+                        <button class="btn-rounded togglePlay" id="playPause" onClick="togglePlay()"> <img src="../images/play.svg"> </button>
+                        <button class="btn btn-transparent btn-rounded" id="avancar"><img
+                                src="../images/avancar.svg"></button>
+                    </div> -->
+            </div>
+        </div>
+        <div id="player_right">
+            <h1 id="sound_control"></h1>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../scripts/index_script.js" async></script>
+<!--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa-->
+</html>
